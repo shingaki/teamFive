@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>What's Happening Dallas?</title>
+</head>
+<body>
+        
+	<div class="container">
+                <div class="jumbotron">
+                    <img src="HapLogo.png" id="logo">
+                
+                </div>
+  </div>  
+  <div class="container" id="nav-bar">
+    <span class="nav-text">
+        <div class="row col-md-3" id="tab">Drinks</div>
+        <div class="row col-md-3" id="tab">Food</div>
+        <div class="row col-md-3" id="tab">Night Life</div>
+        <div class="row col-md-3" id="tab">Things To Do</div>
+    </span>
+  </div>
+  <div class="content-area">
+    <div class="row col-md-9" id="content-wrap">
+        <table class="table table-hover" id='train-table'>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Rate</th>
+                <th>URL</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+    </div>
+    <div class="sidebar">
+      <div class="row col-md-3">Stuff</div>
+    </div>
+  </div>
+    
+    
+<script>
+var restaurantName = "Nick and Sam";
+var restaurantAddress = "111 Anywhere Lane";
+var restaurantContact = "999-999-9999";
+var restaurantRate = "3.5";
+var restaurantWebsite = "www.google.com";
+
+
+var theRow = $("<row>");
+var restaurant = $("<div>");
+restaurant.text(restaurantName);
+var address = $("<div>");
+address.text(restaurantAddress);
+var contact = $("<div>");
+contact.text(restaurantContact);
+var rate = $("<div>");
+rate.text(restaurantRate);
+var website = $("<div>");
+website.text(restaurantWebsite);
+theRow.append(restaurant);
+theRow.append(address);
+theRow.append(contact);
+theRow.append(rate);
+theRow.append(website);
+</script>
+</body>
+</html>
