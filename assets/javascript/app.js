@@ -3,58 +3,50 @@ var queryURL;
 var key = "Z6UMQHvbuwNHtF59FQI7DartEL4P94IiZfF_gOELhwv1KwBA8JQh1OS0kqJ8FJPN4HRW_OLCeiPUECYNN624iyC9ShMHp2ZOG4l6Nk7oji_xv53LVU_VknLMHI22XHYx"
 
 
-var responseData;
-var myURL;
+var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/categories";
+var apiKey = "Z6UMQHvbuwNHtF59FQI7DartEL4P94IiZfF_gOELhwv1KwBA8JQh1OS0kqJ8FJPN4HRW_OLCeiPUECYNN624iyC9ShMHp2ZOG4l6Nk7oji_xv53LVU_VknLMHI22XHYx"
 
-myURL = "https://api.yelp.com/v3/categories";
+$.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+        "accept": "application/json",
+        "x-requested-with": "xmlhttprequest",
+        "Access-Control-Allow-Origin":"*",
+        "Authorization": `Bearer ${apiKey}`
+    }
+}).then(function(res) {
+    var results = res.categories
+    console.log(results);
+});
 
-
-function getRestaurants(queryURL) {
-
-    console.log('call getRestaurants');
-
-    $.ajax({
-        url: queryURL,
-        dataType: "jsonp",
-        jsonpCallback: 'cb',
-        async: 'false',
-        cache: true,
-        // method: "GET",
-        // contentType: "application/json",
-        headers: {
-            // 'Access-Control-Allow-Origin': '*',
-            // 'Access-Control-Request-Headers':'X-Custom-Header',
-            // 'Access-Control-Request-Method':"GET",
-            'Authorization': "Bearer Z6UMQHvbuwNHtF59FQI7DartEL4P94IiZfF_gOELhwv1KwBA8JQh1OS0kqJ8FJPN4HRW_OLCeiPUECYNN624iyC9ShMHp2ZOG4l6Nk7oji_xv53LVU_VknLMHI22XHYx",
-        }
-    })
-        .then(function (response) {
-            responseData = response.data;
-            console.log(responseData);
-        });
-};
-
-getRestaurants(myURL);
-
-// var YELP_API_KEY = "Z6UMQHvbuwNHtF59FQI7DartEL4P94IiZfF_gOELhwv1KwBA8JQh1OS0kqJ8FJPN4HRW_OLCeiPUECYNN624iyC9ShMHp2ZOG4l6Nk7oji_xv53LVU_VknLMHI22XHYx"
+// //eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyN2JmMzFlZDBhZDNiMWJiMWJkYTk0MmU4MjVhZTg0MiIsInN1YiI6IjVjYmU2OTYxMGUwYTI2NDFlZGY0NDNmOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XCrTXGw24MmKGWVEjdfpXqtSkl3v39yMQZ56aMyuuxQ
 //
-// // require('dotenv').config();
 //
-// // const yelp = require('yelp-fusion');
+// // Get the movie information
 //
-// const apiKey = process.env.YELP_API_KEY;
+// // var queryURL;
 //
-// const searchRequest = {
-//     term: 'restaurants',
-//     location: 'Los Angeles',
-// };
+// // var key = "Z6UMQHvbuwNHtF59FQI7DartEL4P94IiZfF_gOELhwv1KwBA8JQh1OS0kqJ8FJPN4HRW_OLCeiPUECYNN624iyC9ShMHp2ZOG4l6Nk7oji_xv53LVU_VknLMHI22XHYx"
 //
-// const client = yelp.client(apiKey);
+// // OMDB
 //
-// client.search(searchRequest)
-//     .then((response) => {
-//         console.log(response.jsonBody);
-//     })
-//     .catch((error) => {
-//         console.log(error);
-//     });
+// //https://api.themoviedb.org/3/movie/upcoming?api_key=27bf31ed0ad3b1bb1bda942e825ae842&language=en-US&page=1
+//
+// var apiKey = "27bf31ed0ad3b1bb1bda942e825ae842";
+//
+// var queryURL = "https://api.themoviedb.org/3/movie/upcoming?api_key=" + apiKey + "&language=en-US&page=1";
+//
+// $.ajax({
+//     url: queryURL,
+//     method: "GET"
+// }).then(function (response) {
+//
+//     console.log(response);
+//
+// })
+
+
+
+
+
