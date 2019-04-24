@@ -6,107 +6,135 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/whatshappening.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>What's Happening Dallas?</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/whapp.js"></script>
+
 </head>
 <body>
-        
-	<div class="container">
-      <div class="jumbotron">
-          <img src="assets/images/HapLogo.png" id="logo">
-      </div>
-  </div>
 
-  <!-- <div class="container">
-      <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-city"> Other Cities</i>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Dallas</button>
-            <button class="dropdown-item" type="button">New York</button>
-            <button class="dropdown-item" type="button">Chicago</button>
-            <button class="dropdown-item" type="button">Los Angeles</button>
-            <button class="dropdown-item" type="button">Houston</button>
-        </div>
-      </div>
-    </div> -->
+<div class="container">
+    <div class="jumbotron">
+        <img src="assets/images/HapLogo.png" id="logo">
+    </div>
+</div>
 
-    <div class="container">
-        <div id="topicButtonsBanner">
-            <div class="btn-group">
-              <button type="button" id= "nightlifeButton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cocktail">&nbsp;</i>Nightlife</button>
-              <div class="dropdown-menu">
+<!-- <div class="container">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-city"> Other Cities</i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button">Dallas</button>
+          <button class="dropdown-item" type="button">New York</button>
+          <button class="dropdown-item" type="button">Chicago</button>
+          <button class="dropdown-item" type="button">Los Angeles</button>
+          <button class="dropdown-item" type="button">Houston</button>
+      </div>
+    </div>
+  </div> -->
+
+<div class="container">
+    <div id="topicButtonsBanner">
+        <div class="btn-group">
+            <button type="button" id= "nightlifeButton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cocktail">&nbsp;</i>Nightlife</button>
+            <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Sports Bar</a>
                 <a class="dropdown-item" href="#">Wine Bar</a>
                 <a class="dropdown-item" href="#">Craft Beer</a>
                 <a class="dropdown-item" href="#">Live Music</a>
-                <a class="dropdown-item" href="#">Clubs & Lounges</a>              
-              </div>
+                <a class="dropdown-item" href="#">Clubs & Lounges</a>
             </div>
+        </div>
+
+        <!-- <div class="dropdown">
+          <button onclick="FoodToggle()" class="dropbtn">Food</button>
+          <div id="FoodDropDown" class="dropdown-content">
+              <a value="American" onclick="getFood('American')">American</a>
+              <a value="Italian" onclick="getFood('Italian')">Italian</a>
+              <a value="BBQ" onclick="getFood('BBQ')">BBQ</a>
+              <a value="Mexican" onclick="getFood('Mexican')">Mexican</a>
+              <a value="Asian" onclick="getFood('Asian')">Asian</a>
+          </div>
+       </div> -->
 
         <div class="btn-group">
-          <button type="button" id= "diningButton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-utensils">&nbsp;</i>Dining</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">American</a>
-            <a class="dropdown-item" href="#">Italian</a>
-            <a class="dropdown-item" href="#">BBQ</a>
-            <a class="dropdown-item" href="#">Mexican</a>
-            <a class="dropdown-item" href="#">Asian</a>           
-          </div>
+            <button type="button" id= "diningButton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-utensils">&nbsp;</i>Dining</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" value="American" onclick="getFood('American')">American</a>
+                <a class="dropdown-item" href="#">Italian</a>
+                <a class="dropdown-item" href="#">BBQ</a>
+                <a class="dropdown-item" href="#">Mexican</a>
+                <a class="dropdown-item" href="#">Asian</a>
+            </div>
         </div>
 
         <div class="btn-group">
-          <button type="button" id= "thingsToDoButton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-check-circle">&nbsp;</i>Things To Do</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Movies</a>
-            <a class="dropdown-item" href="#">Sports</a>
-            <a class="dropdown-item" href="#">Concerts</a>
-            <a class="dropdown-item" href="#">Local Events</a>              
-          </div>
-        </div>    
+            <button type="button" id= "thingsToDoButton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-check-circle">&nbsp;</i>Things To Do</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Movies</a>
+                <a class="dropdown-item" href="#">Sports</a>
+                <a class="dropdown-item" href="#">Concerts</a>
+                <a class="dropdown-item" href="#">Local Events</a>
+            </div>
+        </div>
 
-        <div class="btn-group">
+        <div class="dropdown">
+            <select class="dropbtn" id="CityDropDown" onchange="SelectCity(this.value)">
+                <option selected="selected">Select a City</option>
+                <option value="Dallas" >Dallas</option>
+                <option value="Houston">Houston</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="New York">New York</option>
+            </select>
+        </div>
+
+        <!-- <div class="btn-group">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="otherCitiesButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-city">&nbsp;&nbsp;</i>Other Cities</button>
             <div class="dropdown-menu">
-              <button class="dropdown-item" type="button">Dallas</button>
-              <button class="dropdown-item" type="button">New York</button>
-              <button class="dropdown-item" type="button">Chicago</button>
-              <button class="dropdown-item" type="button">Los Angeles</button>
-              <button class="dropdown-item" type="button">Houston</button>
+              <option value="dropdown-item" type="button">Dallas</button>
+              <option value="dropdown-item" type="button">New York</button>
+              <option value="dropdown-item" type="button">Chicago</button>
+              <option value="dropdown-item" type="button">Los Angeles</button>
+              <option value="dropdown-item" type="button">Houston</button>
             </div>
-        </div>
+        </div> -->
 
         <button id="calendar"><i class='far fa-calendar-alt'>&nbsp;</i>Today</button>
-        
-      </div>  
-    </div>    
+
+    </div>
+</div>
 
 
 
-    <div class="container">
-      <div class="row">
-          <div class="col-md 6"id="content-area">
+<div class="container">
+    <div class="row">
+        <div class="col-md 6"id="content-area">
             <img src="assets/images/image002.png" id="ticket-fpo">
-          </div>
-          <div class="col-md-6" id="sidebar">
+        </div>
+        <div class="col-md-6" id="sidebar">
             <a class="weatherwidget-io" href="https://forecast7.com/en/32d78n96d80/dallas/?unit=us" data-label_1="DALLAS" data-label_2="WEATHER" data-theme="original" >DALLAS WEATHER</a>
-        <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-        </script>
-        <img src="assets/images/image001.png" id="advertising">
-          </div>
-      </div>
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>
+            <img src="assets/images/image001.png" id="advertising">
+        </div>
     </div>
+</div>
 
-    <div class="container">
-      <footer class="footer mt-auto py-3">
-      <span class="text">Copyright 2019, What's Happening Media - Team Five, Inc.</span>
-      </footer>
-    </div>
+<div class="container">
+    <footer class="footer mt-auto py-3">
+        <span class="text">Copyright 2019, What's Happening Media - Team Five, Inc.</span>
+    </footer>
+</div>
+
 </body>
 </html>
