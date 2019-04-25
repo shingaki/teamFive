@@ -104,8 +104,6 @@ $.ajax({
            // push the Food object into the FoodArray 
            FoodArray.push(Food);
        }  // for 
-//       console.log ("FoodArray: ", FoodArray);
-//       console.log(response);
 
        // Display the data on Food Page
        UpdateResultDisplay(FoodArray, CurrentCity, Category);
@@ -381,33 +379,114 @@ function GetCitiesFromDB() {
       });  // query 
 }  // GetCitiesFromDB()
 
+//********************************************************************
+//  function validateEmail(email))
+//  The purpose of this function is to verify that the input email 
+//  address (in a string) is in a valid email format.
+//********************************************************************
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}  // function validateEmail(email)
+
+
 $(document).ready(function() {
-if (DebugOn) console.log ("Beginning Document ready funtion");
+
+  if (DebugOn) console.log ("Beginning Document ready funtion");
+
 //******************************************************************************
 // Initial execution of page will initialize the Firebase Database and 
 // dynamically create the Cities dropdown list
 //****************************************************************************
+  // Initialize Firebase City Database
+  var cityconfig = {
+    apiKey: "AIzaSyBBIs52NALDi2rUuz2oCT-Iavtxxow6AmI",
+    authDomain: "whdb-cb29a.firebaseapp.com",
+    databaseURL: "https://whdb-cb29a.firebaseio.com",
+    projectId: "whdb-cb29a",
+    storageBucket: "whdb-cb29a.appspot.com",
+    messagingSenderId: "642856253130"
+  };
+  firebase.initializeApp(cityconfig);
+  
+  // Create a variable to reference the city database
+  var CityDB = firebase.database(); // pointer to datbase
+  
+  if (DebugOn) console.log("After dbase init");
+  
+  // read the cities from the database and create the dropdown menu
+  GetCitiesFromDB();
+  
+  if (DebugOn) console.log("After building City pulldown menu");
+  
+  //********************************************************************
+//  function - Event handler for user clicking newsletter Submit button
+//  The purpose of this function is to verify that the input email 
+//  address (in a string) is in a valid email format.
+//********************************************************************
+$("#submitBtn").on("click", function(event) {
+  if (DebugOn) console.log("in submit event handler");
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyBBIs52NALDi2rUuz2oCT-Iavtxxow6AmI",
-  authDomain: "whdb-cb29a.firebaseapp.com",
-  databaseURL: "https://whdb-cb29a.firebaseio.com",
-  projectId: "whdb-cb29a",
-  storageBucket: "whdb-cb29a.appspot.com",
-  messagingSenderId: "642856253130"
-};
-firebase.initializeApp(config);
+  // Preventing the button from trying to submit the form
+  event.preventDefault();
 
-// Create a variable to reference the database
-var database = firebase.database(); // pointer to datbase
+  // Get the input name and email
+  var inputName = $("#usrName").val().trim();
+  var inputEmail = $("#usrEmail").val().trim();
 
-if (DebugOn) console.log("After dbase init");
+  var $result = $("#usrMsg");
 
-// read the cities from the database and create the dropdown menu
-GetCitiesFromDB();
+  // Check for valid name
+  if (inputName === "") {    // invalid name
+    $result.text("A name must be entered.");
+    $result.css("color", "red");
+  } else {      // Name field is valid, now check email field
+      // Check for valid email addr
+      if (inputEmail === "") {  // no email address entered
+        $result.text("An email address must be entered.");
+        $result.css("color", "red");
+      }
+      else if (validateEmail(inputEmail)) {    // email is valid
+        // Clear the form fields
+        document.getElementById("usrForm").reset();
 
-if (DebugOn) console.log("After building City pulldown menu");
+        // Display success message
+        $result.text(inputEmail + " is valid. Thanks for signing up, "+ inputName +"!");
+        $result.css("color", "green");
+
+        // both the input name and email address are valid
+        // write the information to the database
+
+      } 
+      else {      // not valid email - needs to be corrected and submitted
+
+        $result.text(inputEmail + " is not a valid email address.  Please correct and re-enter");
+        $result.css("color", "red");
+      }  // if (validateEmail(inputEmail))
+
+  }  // if (inputName === "")
+  
+});  // event handler function for submit button
+
+
+//********************************************************************
+//  function - Event handler for user clicking Newsletter button
+//  The purpose of this function is to invoke the Newsletter signup
+//  modal popup box.
+//********************************************************************
+$("#newsBtn").click(function(){
+  
+  // Clear the form fields and user message area
+  document.getElementById("usrForm").reset();
+  $("#usrMsg").text("");
+  
+  if (DebugOn) console.log ("in myBtn click");
+  
+  $("#newsModal").modal();
+
+  if (DebugOn) console.log ("after modal box");
+
+});  //  $("#newsBtn").click(function()
 
 
 });  // $(document.body).ready(function()
