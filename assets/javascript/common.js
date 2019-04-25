@@ -7,7 +7,6 @@ var ZomCityID = "276";       // assign a starting or default City
 var CityList = [];           // create pointer to empty CityArray
 var ZomatoAPIKey = "8361db6e811b9639f3fbd799b81695b0";   // Ann's Zomato API key
 var YelpAPIKey = "2OmLWmtreHVEweRgkciRyyxorN-DnYkyTD4bmsrycQHjbI2XxTZAm8DKGZLwwvbVbuGIkUR1-Af8Olwv3WHEBdN396aBLUZBSEs69f62GUCBgDeJ9L5h9CAf6WG-XHYx";   // Ann's Yelp API key
-var EventfulAPIKey = "H4CT3G2MGSHPWA6SXQIL" //Bill's Eventful API Key
 
 var DebugOn = true;
 
@@ -31,7 +30,7 @@ var Food = {
     Website: ""  // string - url of website
 };
  
-// Night Life Object Definition
+// Night Life Object Definition  
 var Night = {
     Name: "",    // string - name of place
     Addr: "",    // string - physical location of place
@@ -39,16 +38,6 @@ var Night = {
     Rate: "",    // string - rating of place
     Website: ""  // string - url of website
 };
-
-// Event Local Object Definition
-var eventLocal = {
-    Name: "",    // string - name of event
-    Start: "",   // string - start date
-    End: "",    // string - end date
-    Summary: "", // string - short description of the event
-    Website: ""  // string - url of website
-};
-
 
 // City List Database Object Definition
 var City = {
