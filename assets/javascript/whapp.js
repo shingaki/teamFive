@@ -214,12 +214,6 @@ function getNight(Category) {
 function UpdateResultDisplay (inputArray, City, Category) {
   if (DebugOn) console.log ("In UpdateResultDisplay(): ", inputArray);
 
-  if (MyMockUp) {
-      $("#CityCategory").text("Results for City: " + City + "  Category: " + Category);
-      // Clear the existing info in display
-      $("#content-area").html("");
-  }  // if
-
   // Populate the new row of display data
   var newRow = $("<tr>");
 
