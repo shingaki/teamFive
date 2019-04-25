@@ -1,10 +1,15 @@
 // Global Variable Definitions
-var ThingsLimit = 10;
+var ThingsLimit = 10;        
 var FoodLimit = 10;
 var NightLimit = 10;
-var CurrentCity = "";
+var CurrentCity = "Dallas";  // assign a starting or default City
+var ZomCityID = "276";       // assign a starting or default City
+var CityList = [];           // create pointer to empty CityArray
+var ZomatoAPIKey = "8361db6e811b9639f3fbd799b81695b0";   // Ann's Zomato API key
+var YelpAPIKey = "2OmLWmtreHVEweRgkciRyyxorN-DnYkyTD4bmsrycQHjbI2XxTZAm8DKGZLwwvbVbuGIkUR1-Af8Olwv3WHEBdN396aBLUZBSEs69f62GUCBgDeJ9L5h9CAf6WG-XHYx";   // Ann's Yelp API key
+
 var DebugOn = true;
-var MockUp = true;
+
 
 //********************************************************************************
 // Things To Do Object Definition
@@ -32,5 +37,11 @@ var Night = {
     Phone: "",   // string - phone number of place
     Rate: "",    // string - rating of place
     Website: ""  // string - url of website
+};
+
+// City List Database Object Definition
+var City = {
+    Name: "",
+    ZomID: ""
 };
 
