@@ -4,11 +4,10 @@ body {
 }
 
 .jumbotron {
-    background-image: url("../images/header-dallas.jpg");
+    background-image: url("../images/dallasdallas.jpg");
     margin: auto;
     max-height:200px;
     max-width: 960;
-    mask-repeat: no-repeat;
 }
 
 
@@ -48,7 +47,7 @@ body {
 }
 
 #advertising {
-    max-width: 100%;
+   max-width: 100%;
     max-height: 100%;
 }
 
@@ -59,10 +58,10 @@ body {
 
 #topicButtonsBanner {
     padding: 15px;
-    background: Blue;
+    background: green;
 }
 
-/* #otherCitiesButton {
+#otherCitiesButton {
     color: white;
     width: 210px;
     background: #011efe;
@@ -70,43 +69,35 @@ body {
     border: none;
     height: 37px;
     display:none;
-} */
+}
 
 #nightlifeButton{
     color: white;
     width: 210px;
     border: none;
     font-family: 'Montserrat', sans-serif;
-    background: goldenrod;
+    background: goldenrod; 
 }
 @keyframes bounce {
-    0%, 20%, 60%, 100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
 
-    40% {
-        -webkit-transform: translateY(-20px);
-        transform: translateY(-20px);
-    }
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
 
-    80% {
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px);
-    }
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
 }
 #nightlifeButton:hover {
     animation: bounce 1s;
 }
 
-
-#nightButton{
-    color: white;
-    width: 210px;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    background: goldenrod;
-}
 
 #diningButton {
     color: white;
@@ -129,8 +120,7 @@ body {
     transform: scale(1.1);
 }
 
-
-#thingsButton {
+#thingsToDoButton {
     color: white;
     width: 210px;
     border: none;
@@ -143,49 +133,52 @@ body {
     transform: skew(-15deg);
 }
 
-#newsBtn {
-    font-family: 'Montserrat', sans-serif;
+
+#calendar {
     width: 210px;
+    height: 36px;
+    font: 15px;
     color: white;
-    background: green;
+    border-radius: 3px;
     border: none;
-}
-
-#CityDropDown {
-    font-family: 'Montserrat', sans-serif;
-    width: 210px;
-}
-
-
-
-.modal-header, #news-title, .close {
-    background-color: #5cb85c;
-    color:white !important;
-    text-align: center;
-    font-size: 30px;
+    padding: 6px 12px;
+    background-color: aqua;
     font-family: 'Montserrat', sans-serif;
 }
-.modal-footer {
-    background-color: #f9f9f9;
-}
-#usrMsg {
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.modal-header, #news-title, .close {
-    background-color: #5cb85c;
-    color:white !important;
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Montserrat', sans-serif;
-}
-.modal-footer {
-    background-color: #f9f9f9;
-}
-#usrMsg {
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
+#calendar:hover {
+    background: rgba(0,0,0,0);
+	color: aqua;
+	box-shadow: inset 0 0 0 3px aqua;
 }
 
 
+
+/* i {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+} */
+
+
+
+/* .container {
+        position: center;
+         display: inline-block;
+} */
+
+/* 
+#dropdownMenu2 {
+    font-family: 'Asap', sans-serif;
+    background: cornflowerblue;
+    border-radius: 7px;
+} */
+
+/* #mnnav-btn {
+    width:220px;
+} */
+
+/* .dropdown {
+    background-color: #1976d2 ;
+    max-width:1110px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 80%;
+} */
